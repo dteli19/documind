@@ -70,28 +70,6 @@ documind/
 
 ---
 
-## 🚀 Setup and Run
-
-```bash
-git clone https://github.com/dteli19/documind.git
-cd documind
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-Create `.env`:
-```
-GROQ_API_KEY=your_groq_key_here
-```
-
-Run:
-```bash
-streamlit run app.py
-```
-
----
-
 ## 💬 Example Questions
 
 | Document | Question |
