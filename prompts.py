@@ -9,6 +9,7 @@ QA_PROMPT = PromptTemplate.from_template(
     
     Do not make up information that is not in the context.
     Always be specific and quote relevant details from the context.
+    Try to connect the dots and provide a comprehensive answer based on the context.
     Context:
     {context}
 
