@@ -17,7 +17,7 @@ def get_llm():
         api_key=groq_key,
         model="openai/gpt-oss-20b",
         temperature=0,
-        model_kwargs={"reasoning_effort": "low"}
+        extra_body={"reasoning_effort": "low"}
     )
     return llm
 
