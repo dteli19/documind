@@ -7,9 +7,18 @@ import os
 def get_llm():
     load_dotenv()
     groq_key = os.getenv('GROQ_API_KEY')
-    llm = ChatGroq(api_key=groq_key,
-    model="openai/gpt-oss-20b",
-    temperature=0)
+    try:
+        import streamlit as st
+        if not groq_key:
+            groq_key = st.secrets.get("GROQ_API_KEY", "")
+    except Exception:
+        pass
+    llm = ChatGroq(
+        api_key=groq_key,
+        model="openai/gpt-oss-20b",
+        temperature=0,
+        model_kwargs={"reasoning_effort": "low"}
+    )
     return llm
 
 def create_qa_chain(retriever):
